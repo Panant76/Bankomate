@@ -23,6 +23,7 @@ public class CardServiceImpl implements CardService {
     }
 
     public String viewCashAmount() {
+
         return String.valueOf(card.getCashAmount());
     }
 
@@ -33,7 +34,7 @@ public class CardServiceImpl implements CardService {
     }
 
     public String addCash(int amount) {
-
-        return null;
+        card.setCashAmount(card.getCashAmount() + amount);
+        return "Карта успешно пополнена на сумму: " + amount;
     }
 }
