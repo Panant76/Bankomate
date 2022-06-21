@@ -5,7 +5,6 @@ import bankomate.exceptions.NoEnoughMoneyException;
 import bankomate.exceptions.WrongPinException;
 
 public class CardServiceImpl implements CardService {
-
     private AuthorizationService authorizationService;
     private Card card;
 
@@ -23,8 +22,7 @@ public class CardServiceImpl implements CardService {
     }
 
     public String viewCashAmount() {
-
-        return "Ваш баланс: "+(String.valueOf(card.getCashAmount()));
+        return "Ваш баланс: " + (String.valueOf(card.getCashAmount()));
     }
 
     public String pinChange(int oldPin, int newPin) throws WrongPinException {
@@ -43,6 +41,6 @@ public class CardServiceImpl implements CardService {
             throw new NoEnoughMoneyException();
         }
         card.setCashAmount(card.getCashAmount() - amount);
-        return "Сумма "+amount+"Успешно переведена на карту"+cardNumber;
+        return "Сумма " + amount + "Успешно переведена на карту" + cardNumber;
     }
 }

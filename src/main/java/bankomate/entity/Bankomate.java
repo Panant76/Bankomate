@@ -64,8 +64,7 @@ public class Bankomate {
                 authorizationService.logOut();
                 break;
             case 3:
-                ioService.write("Введите сумму пополнения");
-                cardService.addCash(ioService.readInt());
+                addCash();
                 ifExit();
                 authorizationService.logOut();
                 break;
@@ -84,6 +83,11 @@ public class Bankomate {
 
 
         }
+    }
+
+    private void addCash() {
+        ioService.write("Введите сумму пополнения");
+        cardService.addCash(ioService.readInt());
     }
 
     private void perevod() {
@@ -127,8 +131,7 @@ public class Bankomate {
     private void ifExit() {
         ioService.write("Желаете ли продолжить? y/n");
         try {
-            if (ioService.read().equals("y"))
-            {
+            if (ioService.read().equals("y")) {
                 operationChoose();
             }
         } catch (IOException e) {
