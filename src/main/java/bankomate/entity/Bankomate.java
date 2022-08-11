@@ -80,8 +80,6 @@ public class Bankomate {
                 break;
             default:
                 authorizationService.logOut();
-
-
         }
     }
 
