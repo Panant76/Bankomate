@@ -12,4 +12,5 @@ public interface CardService {
     String pinChange(int oldPin, int newPin) throws WrongPinException;
 
     String addCash(int amount);
+    String perevod(int amount,long cardNumber) throws NoEnoughMoneyException;
 }
